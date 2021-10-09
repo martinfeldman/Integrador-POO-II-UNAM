@@ -41,18 +41,24 @@ POSTCONDICION: Cambia la condición del expediente a << A la espera de Carga de 
 ###  Solicitar Reemplazo de Profesional en Direccion de Obra
 
 
-&emsp;    Diseño:
-- Se considera disponer las entradas y luego en texto plano el [modelo de nota] (#modeloNota_ReemplazoProfesional) que es enviada al Empleado Adm para solicitarel Reemplazo. Entonces el profesional tiene constancia del documento. 
+&emsp;    **Datos de entrada**: el profesional debe poseer/conocer: 
+- los datos del propietario (véase en <<link>>) que registra en el sistema o bien lo puede seleccionar de la lista,
+- datos del profesional a reemplazar <<link>> (que le deben ser administrados por el propietario: ) 
+- la referencia catastral de la obra <<link>>, 
+- y el/los numero/s de partida/s inmobiliaria/s corrrespondientes a la obra.
 
-&emsp;    **Datos de entrada**: el profesional debe poseer los datos del propietario (véase en <<link>>) que registra el sistema,
-datos del profesional a reemplazar <<link>> (que le deben ser administrados por el propietario: ) y la referencia catastral de la obra <<link>>. 
-NOTA: Quien solicita no necesita ver el expediente del profesional por reemplazar, ni seleccionar la obra en cuestión.
+<b>NOTA</b>: Quien solicita no necesita ver el expediente del profesional por reemplazar, ni seleccionar la obra en cuestión.
 Los datos de entrada bastan para referenciar correctamente todo.
 
-&emsp;    El profesional que solicita el Reemplazo debe ingresar los datos mencionados 
-y una vez confirme 'LISTO',  entra en acción el modulo automatizado <<link>>  que entre sus tareas  genera la [Nota de Reemplazo Profesional](#notaReemplazoProfesional), nombre seleccionado para referenciar dicha nota que tiene caracter de documento dentro del dominio de la entidad, y que es enviada al empleado Adm. 
+&emsp;    El caso de uso comienza cuando el profesional hace click en una sección del menú de la interfaz para solicitar el Reemplazo. 
+Debe ingresar los datos mencionados y una vez confirme 'LISTO',
+entra en acción el modulo automatizado <<link>>  que entre sus tareas  genera la [Nota de Reemplazo Profesional](#notaReemplazoProfesional), nombre seleccionado para referenciar dicha nota que tiene caracter de documento dentro del dominio de la entidad.
+Luego el profesional podrá descargar la Nota generada y termina el caso de uso.
 
-&emsp;    Salida: No hay salida. El profesional espera la evaluación del Empleado Administrativo.
+ 
+
+&emsp;    Salida: La nota de Reemplazo Profesional con los datos de entrada adjuntos en ella.
+&emsp;    NOTA: El profesional debe esperar la evaluación de la Nota por parte del Empleado Administrativo.
 &emsp;    NOTA: Este caso de uso solo se puede producir con una obra que  
 
 <br/> <br/>
@@ -61,30 +67,33 @@ y una vez confirme 'LISTO',  entra en acción el modulo automatizado <<link>>  q
 
 
 
+### Cargar Nota de Reemplazo Profesional firmada
+
+Datos de entrada: la nota (en formato pdf)
+
+Este caso de uso comienza cuando el profesional desea cargar la Nota de Reemplazo Profesional con su firma y la del propietario.
+
+Salida: Mensaje de "Nota cargada con éxito", o de "Formato no aceptable".
 
 
+
+### Evaluar Solicitud de Reemplazo Profesional
+
+Este caso de uso comienza cuando el Empleado Administrativo accede (a través de una notificación o ¿en la vista del expediente en cuestión?)
+a una Nota de Reemplazo Profesional. 
+Debe evaluar si la información es feaciente y determinar si la aprueba o desaprueba.
+El caso de uso se extiende, según sea el caso, a  *Aprobar solicitud Reemplazo en Direccion de Obra* o *Desaprobar solicitud Reemplazo en Direccion de Obra*.
+<br/> <br/>
 
 
 ### Aprobar solicitud Reemplazo en Direccion de Obra
 
 
-&emsp;    Entrada: los datos de salida de Solicitar Reemplazo en Dirección de Obra
-cuando empleado Adm reciba la solicitud define si continua el flujo.
-
-Si da el OK, se llama al modulo automatizado <<link>>  que, 'por debajo', 
-realiza los cambios en el expediente 1, el existente ( quita la direccion de obra al profesional 1 y añade que se dió de baja al profesional en la tarea porReemplazo de Profesional) 
-y abre un expediente 2 para el profesional 2 con los datos que ya ha sumunistrado en la solicitud (prop y obra).
-Este expediente(2) contendrá unicamente la tarea Direccion de Obra. Cuando sea requerido, 
-este profesional (2) podrá agregar más tareas desde el caso de uso Modificar Expediente
+Si el empleado Administrativo aprueba la nota, se llama al Modulo Automatizado 3 *Interacción por Reemplazo de Profesional en Dirección de Obra*<<link>>  
 <br/>
 
 &emsp;    Salida: No hay salida.
-&emsp;    Postcondicion: Si hay. Cambios efectuados por el modulo automatizado Y . 
-<br/>
-
-&emsp;  NOTA: Los expedientes involucrados tendrán constatado el evento. En la tabla Notas de Reemplazo se guarda esta Instancia de Nota en una fila y una columna(IdExpediente) referencia a este expediente.
-Se buscará crear una referencia del otro y que ambos expedientes se conozcan.
-&emsp;  NOTA: Los expedientes que registran más de una tarea y se ven afectados por la baja del profesional en Direccion de Obra, continuan registrando las demás tareas.
+&emsp;    Postcondicion: Cambios efectuados por el modulo automatizado. 
 
 <br/> <br/>
 
@@ -175,6 +184,9 @@ si, en cambio, ha sido desaprobada la nota de Reemplazo Profesional,
 entonces comunicará el fallo al profesional que lo solicitó y esperará una confirmación de visto.
 
 
+&emsp;  NOTA: Los expedientes involucrados tendrán constatado el evento. En la tabla Notas de Reemplazo se guarda esta Instancia de Nota en una fila y una columna(IdExpediente) referencia a este expediente.
+Se buscará crear una referencia del otro y que ambos expedientes se conozcan.
+&emsp;  NOTA: Los expedientes que registran más de una tarea y se ven afectados por la baja del profesional en Direccion de Obra, continuan registrando las demás tareas.
 
 
 

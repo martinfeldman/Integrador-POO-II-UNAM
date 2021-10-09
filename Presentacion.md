@@ -2,6 +2,10 @@
  <!---Para subrayar + negrita:    **<span style="text-decoration: underline">   </span>**         ---> 
 <!---Para centrar:     <span style="text-align: center"> </span>  --->
 
+# Este archivo se eliminará en los proximos commits. 
+
+
+
 ####  Grupo X - Alumnos: Feldman, Martin & Schmitt, Gabriel   
 <br/> <br/> 
 
@@ -33,92 +37,8 @@ Los profesionales sólo pueden agregar 3 tareas a un expediente, existiendo adem
 
 
 
-#### &nbsp;&nbsp; &nbsp;&nbsp; Clientes potenciales
-
-¿Quiénes están afectados por este problema y se beneficiarían de la solución propuesta? (es decir, los usuarios potenciales del software que están por construir).
-
-El software puede ser útil para cualquier entidad que entre sus tareas tenga la gestión de expedientes y necesite interactuar por cuestiones relevantes sobre los mismos con profesionales, que son quienes abren los expedientes. 
-<br/>
 
 
-
-
-#### &nbsp;&nbsp; &nbsp;&nbsp; Solución propuesta
-
-Escriban algunas oraciones que describan cómo la solución de software resolverá el problema descrito anteriormente.
-
-
-
-
-#### **Requisitos funcionales:**
- enumeren los requisitos (funcionales) que debe tener el software para resolver el problema mencionado anteriormente. Es útil tratar de agrupar los requisitos en los que son esenciales (debe estar) y los que no son esenciales (sería bueno que estén).
-<br/>
-
-
-##### &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; RF de Expedientes:
-
-- Crear, modificar y eliminar expedientes. La información que se almacena de cada expediente ha sido definida en « Introducción y Objetivos ».
-- Pedir confirmación ante la solicitud de borrado de expedientes. 
-
-Bussiness logic: 
-- Se requiere poder especificar la renuncia del profesional, si la hubiera, dentro del expediente (específico de la tarea Dirección de Obra en una obra nueva).
-- Recuperar de la base de datos y mostrar los datos al usuario. En el proceso, disponer de multiples métodos de selección de expedientes, que permitan recuperar aquellos que cumplan con ciertos atributos.  
-<br/><br/>
-
-##### &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; RF de Administración de Sistema:
-
--   Definir un usuario Administrador, el cual posee facultades para manipular  todas las funciones del sistema. Se requiere otorgarle un nombre identificador, contraseña y un mail. 
-- Crear, modificar, categorizar y eliminar Usuarios, siendo posible los roles: Profesional matriculado y Empleado Administrativo. La información relevante para cada usuario será:
-    -  nombre, apellido, dni,
-    - número de matricula (omitido para el Empleado Administrivo),
-    - contacto (email y teléfono),
-    - nombre de usuario (cuenta), contraseña 
-    - permisos otorgados en el sistema . 
-
-- El sistema debe contar con una instancia de Login, el cual permite llevar registro de las acciones realizadas por los empleadores del sistema. También, permite cerrar la sesión del usuario.
-Operar únicamente si hay un usuario que haya iniciado sesión.
-
-Bussiness logic: 
-- Crear certificado de un expediente, que cuente con el abal de la entidad. En el mismo, se adjuntan datos como: nombre de la entidad, dirección, contacto (mail y/o teléfono), y su contenido.
-
-
-
-
-
-
-<br/><br/>
-
-##### &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; RF [Otros]:
- 
-Calcular, generar y mostrar estadísticas relacionadas a los diferentes conceptos del entorno. El usuario define el período de interés. Los resultados deben poder desplegarse también en modo escrito y ser manipulables mediante filtros.
-
-Generar informes imprimibles, con la posibilidad de ser parametrizados por el usuario.
-
-<br/><br/>
-
-
-
-
-#### &nbsp;&nbsp; &nbsp;&nbsp; Arquitectura de software
-
-¿Será esta una aplicación web / de escritorio / móvil (todas o algún otro tipo)? ¿Se ajustaría a la arquitectura de software Cliente-Servidor?
-
-    Aplicacion web, con arquitectura Cliente-Servidor
-
-
-<br/>
-
-
-
-#### &nbsp;&nbsp; &nbsp;&nbsp; Wireframes
-<pre>
-Desarrollar los esquemáticos de las pantallas.
-
-            https://integrador-diseno-de-pant-32f5da2baa3b8.webflow.io/
-
-</pre>
-
-<br/> <br/>
 
 
 

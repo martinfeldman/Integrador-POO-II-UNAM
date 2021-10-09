@@ -2,7 +2,7 @@
 
 trabajoFinal.code-workspace
 
-esquema/tmp/*
+esquema/docs/diagranas/disenio/tmp/*
 esquema/.lock
-esquema/VPProjects/Diagramas-TrabajoFinal.vpp.bak*
-esquema/database/modeloConceptual.architect~
+esquema/.vpprefdata/
+esquema/docs/diagranas/disenio/VPProjects/Diagramas-TrabajoFinal.vpp.bak*
