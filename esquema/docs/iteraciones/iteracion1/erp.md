@@ -1,4 +1,4 @@
-El producto software a desarrollar se denomina:
+<strong>*NOTA: Se mantiene sin cambios con respecto a la iteración 0*</strong>
 
 # ***Sistema de gestión de expedientes para la entidad  administrativa Colegio de Arquitectos de Misiones***
 
